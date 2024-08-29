@@ -1,5 +1,5 @@
+// Function to divide numbers sequentially
 const divide = (numbers) => {
-  
   return numbers
     .slice(1)
     .reduce(

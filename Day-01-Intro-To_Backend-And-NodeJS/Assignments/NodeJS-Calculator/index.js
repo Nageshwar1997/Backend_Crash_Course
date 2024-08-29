@@ -1,5 +1,3 @@
-const crypto = require("crypto");
-
 const add = require("./addition");
 const sub = require("./subtraction");
 const mult = require("./multiplication");
@@ -16,20 +14,22 @@ const numbers = argv
   .map((num) => num.trim())
   .map(Number);
 
+// Check for valid operation and numbers
 if (!operation) {
   console.log(
     "Please provide an operation, operations are: add, sub, mult, div, sin, cos, tan, random"
   );
   return;
 } else if (numbers.length === 0) {
-  console.log("Please provide an operands");
+  console.log("Please provide operands");
   return;
-} else if (operation && numbers.includes(NaN)) {
+} else if (numbers.includes(NaN)) {
   console.log("Please provide valid operands");
   return;
 } else {
   switch (operation) {
     case "add": {
+      // Handle addition operation
       if (numbers.length === 1) {
         console.log(numbers[0]);
         break;
@@ -39,6 +39,7 @@ if (!operation) {
       break;
     }
     case "sub": {
+      // Handle subtraction operation
       if (numbers.length === 1) {
         console.log(numbers[0]);
         break;
@@ -48,6 +49,7 @@ if (!operation) {
       break;
     }
     case "mult": {
+      // Handle multiplication operation
       if (numbers.length === 1) {
         console.log(numbers[0]);
         break;
@@ -57,6 +59,7 @@ if (!operation) {
       break;
     }
     case "divide": {
+      // Handle division operation
       if (numbers.length === 1) {
         console.log(numbers[0]);
         break;
@@ -71,36 +74,40 @@ if (!operation) {
       break;
     }
     case "sin": {
+      // Handle sine operation
       console.log(sin(numbers));
       break;
     }
     case "cos": {
+      // Handle cosine operation
       console.log(cos(numbers));
       break;
     }
     case "tan": {
+      // Handle tangent operation
       console.log(tan(numbers));
       break;
     }
-    case "random":
-      {
-        if (numbers.length === 1) {
-          (async () => {
-            try {
-              const binaryStr = await random(4); // Adjust '4' based on your requirements
-              console.log(binaryStr);
-            } catch (err) {
-              console.error(err);
-            }
-          })();
-          break;
-        } else {
-          console.log("Provide only one length for random number generation.");
-        }
+    case "random": {
+      // Handle random number generation
+      if (numbers.length === 1) {
+        (async () => {
+          try {
+            const binaryStr = await random(numbers[0]); // Use the provided length for random bytes
+            console.log(binaryStr);
+          } catch (err) {
+            console.error(err);
+          }
+        })();
+        break;
+      } else {
+        console.log("Provide only one length for random number generation.");
       }
       break;
+    }
 
     default: {
+      // Handle invalid operation
       console.log(
         "Invalid Operation :- Please provide valid operation, operations are: add, sub, mult, div, sin, cos, tan, random"
       );

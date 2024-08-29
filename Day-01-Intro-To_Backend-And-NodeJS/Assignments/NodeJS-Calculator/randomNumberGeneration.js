@@ -1,5 +1,6 @@
 const crypto = require("crypto");
 
+// Function to generate a random binary string of specified length
 const random = (length) => {
   return new Promise((resolve, reject) => {
     crypto.randomBytes(length, (err, buf) => {
