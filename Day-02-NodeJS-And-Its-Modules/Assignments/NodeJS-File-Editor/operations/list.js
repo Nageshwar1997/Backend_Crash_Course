@@ -4,7 +4,7 @@ const listDirectory = (directoryPath) => {
   try {
     // Read the contents of the directory specified by directoryPath.
     // This returns an array of filenames in the directory.
-    const files = fs.readdirSync(directoryPath);
+    const files = fs.readdirSync(directoryPath, "utf-8");
 
     // Return the array of filenames.
     return files;
