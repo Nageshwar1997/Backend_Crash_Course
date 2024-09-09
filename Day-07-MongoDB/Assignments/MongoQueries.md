@@ -1,0 +1,61 @@
+# MongoDb Queries
+
+## Que. 01 : Find the employee with employee_id 25.
+
+### Ans: `db.employees.find({employee_id:25})`
+
+## Que. 02 : Find all employees in Department3.
+
+### Ans: `db.employees.find({department: "Department3"})`
+
+## Que. 03 : List all employees with a salary greater than 55000.
+
+### Ans: `db.employees.find({salary: {$gt: 55000}})`
+
+## Que. 04 : Count the number of employees in Department1.
+
+### Ans: `db.employees.find({department: "Department1"}).count()`
+
+## Que. 05 : Increase the salary of the employee with employee_id 50 by 5000.
+
+### Ans: `db.employees.updateOne({employee_id: 50}, {$inc: {salary: 5000}})`
+
+## Que. 06 : Find all employees who joined after 2022-01-15.
+
+### Ans: `db.employees.find({date_joined: {$gt: "2022-01-15"}})`
+
+## Que. 07 : Delete the employee with employee_id 10.
+
+### Ans: `db.employees.deleteOne({employee_id: 10})`
+
+## Que. 08 : Find all employees whose last name starts with 'L'.
+
+### Ans: `db.employees.find({last_name: {$regex: /^L/, $options: "i"}})` OR `db.employees.find({last_name: {$regex: "L"}})`
+
+## Que. 09 : Find all employees with no manager (manager_id is None).
+
+### Ans: `db.employees.find({manager_id: null})`
+
+## Que. 10 : Find all employees who are older than 30.
+
+### Ans: `db.employees.find({age: {$gt: 30}})`
+
+## Que. 11 : Update the department of the employee with employee_id 75 to Department2.
+
+### Ans: `db.employees.updateOne({employee_id: 75}, {$set: {department: "Department2"}})`
+
+## Que. 12 : Find all employees whose email contains 'firstname5'.
+
+### Ans: `db.employees.find({email: {$regex: "firstname5", $options: "i"}})`
+
+## Que. 13 : Find all employees who joined on or before 2022-01-10.
+
+### Ans: `db.employees.find({date_joined: {$lt: "2022-01-10"}})`
+
+## Que. 14 : Retrieve all employees sorted by salary in descending order.
+
+### Ans: `db.employees.find().sort({salary: -1})`
+
+## Que. 15 : Count the number of employees who are in Department4 and have a salary above 52000.
+
+### Ans: `db.employees.find({department: "Department4", salary: {$gt: 52000}})`
