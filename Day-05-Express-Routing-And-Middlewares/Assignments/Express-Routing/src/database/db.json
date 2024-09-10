@@ -1,0 +1,12 @@
+{
+  "users": [
+    {
+      "id": 569,
+      "firstName": "Nageshwar",
+      "lastName": "Pawar",
+      "email": "nageshwar@outlook.com",
+      "password": "Nageshwar@123"
+    }
+  ],
+  "todos": []
+}
