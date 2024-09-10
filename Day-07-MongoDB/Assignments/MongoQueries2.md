@@ -1,0 +1,49 @@
+# Mongo Queries
+
+## Que 01. How do you list all the databases present in your MongoDB server?
+
+### Ans : `show dbs` OR `show databases`
+
+## Que 02. What command is used to create or switch to a database in MongoDB?
+
+### Ans : `use databaseName`
+
+## Que 03. How can you create a collection named "students" in your MongoDB database?
+
+### Ans : `db.createCollection("students")`
+
+## Que 04. Write the command to insert a single document into the "students" collection with at least three fields: name, age, and course.
+
+### Ans : `db.students.insertOne({name: "Nageshwar", age: 27, course: "Full Stack Web Development"})`
+
+## Que 05. How would you insert multiple documents into the "students" collection in a single command?
+
+### Ans : `db.students.insertMany([{name: "Sanket", age: 24, course: "Full Stack Software Development"}, {name: "Madhav", age: 25, course: "Full Stack Android Development"}, {name: "Santosh", age: 22, course: "Data Science"}])`
+
+## Que 06. What command is used to find or read all documents in the "students" collection?
+
+### Ans : `db.students.find()`
+
+## Que 07. How can you read or find the first document in the "students" collection?
+
+### Ans : `db.students.findOne()`
+
+## Que 08. Describe the command to update the course field of a specific student named "John Doe" to "Data Science".
+
+### Ans : `db.students.updateOne({name: "John Doe"}, {$set: {course: "Data Science"}})`
+
+## Que 09. What command would you use to increment the age field of all documents in the "students" collection by 1?
+
+### Ans : `db.students.updateMany({},{$inc: {age: 1}})`
+
+## Que 10. How can you delete a document with a specific name from the "students" collection?
+
+### Ans : `db.students.deleteOne({name: "John Doe"})`
+
+## Que 11. Write the command to delete all documents from the "students" collection where the age is greater than or equal to a specific value.
+
+### Ans : `db.students.deleteMany({age: {$gte: 30}})`
+
+## Que 12. How do you find documents in the "students" collection where the course field is "Data Science"?
+
+### Ans : `db.students.find({course: "Data Science"})`
