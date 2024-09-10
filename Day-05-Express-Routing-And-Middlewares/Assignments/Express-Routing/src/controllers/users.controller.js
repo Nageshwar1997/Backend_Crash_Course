@@ -129,7 +129,9 @@ const updateUserController = async (req, res) => {
       }
     }
     fs.writeFileSync(filePath, JSON.stringify({ users, todos }, null, 2));
-    res.status(200).json({ message: "User updated successfully", updatedUser: user });
+    res
+      .status(200)
+      .json({ message: "User updated successfully", updatedUser: user });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
