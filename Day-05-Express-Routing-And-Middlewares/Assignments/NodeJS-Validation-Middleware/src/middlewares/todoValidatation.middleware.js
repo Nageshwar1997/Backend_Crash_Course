@@ -73,9 +73,9 @@ const todoValidationMiddleware = async (req, res, next) => {
 
       const errorFile = fs.readFileSync(filePath, "utf-8").split("\n");
       return res.status(400).json({ error: errorFile });
-      }
-      
-      req.body.ID = ID;
+    }
+
+    req.body.ID = ID;
 
     next();
   } catch (error) {

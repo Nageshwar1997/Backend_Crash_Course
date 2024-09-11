@@ -5,10 +5,7 @@
       "Rating": 4.5,
       "Description": "Description",
       "Genre": "Genre",
-      "Cast": [
-        "Nageshwar",
-        "Manjusha"
-      ],
+      "Cast": ["Nageshwar", "Manjusha"],
       "ID": 606
     },
     {
@@ -16,11 +13,7 @@
       "Rating": 4.5,
       "Description": "Description",
       "Genre": "Genre",
-      "Cast": [
-        "Nageshwar",
-        "Manjusha",
-        "Dhanashree"
-      ],
+      "Cast": ["Nageshwar", "Manjusha", "Dhanashree"],
       "ID": 441
     }
   ]
