@@ -6,7 +6,25 @@
       "lastName": "Pawar",
       "email": "nageshwar@outlook.com",
       "password": "Nageshwar@123"
+    },
+    {
+      "id": 67,
+      "firstName": "Nageshwar",
+      "lastName": "Pawar",
+      "email": "nageshwar@gmail.com",
+      "password": "Nageshwar@123"
     }
   ],
-  "todos": []
+  "todos": [
+    {
+      "id": 670,
+      "title": "Learn MongoDB",
+      "status": true
+    },
+    {
+      "id": 740,
+      "title": "learn React",
+      "status": false
+    }
+  ]
 }

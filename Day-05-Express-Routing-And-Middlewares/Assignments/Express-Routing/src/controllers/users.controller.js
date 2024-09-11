@@ -146,6 +146,24 @@ const getAllUsersController = async (req, res) => {
   }
 };
 
+const getUserController = async (req, res) => {
+  try {
+    const { users } = JSON.parse(data);
+    const { id } = req.params;
+    const user = users.find((user) => user.id === parseInt(id));
+
+    if (!user) {
+      return res
+        .status(401)
+        .json({ message: `User not found with id : ${id}` });
+    }
+    console.log("User",user)
+    res.status(200).json({ user, message: "User fetched successfully" });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
 const deleteUserController = async (req, res) => {
   try {
     let { users, todos } = JSON.parse(data);
@@ -172,5 +190,6 @@ module.exports = {
   loginUserController,
   updateUserController,
   getAllUsersController,
+  getUserController,
   deleteUserController,
 };
