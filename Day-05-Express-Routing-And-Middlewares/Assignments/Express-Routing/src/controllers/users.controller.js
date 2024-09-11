@@ -157,7 +157,6 @@ const getUserController = async (req, res) => {
         .status(401)
         .json({ message: `User not found with id : ${id}` });
     }
-    console.log("User",user)
     res.status(200).json({ user, message: "User fetched successfully" });
   } catch (error) {
     res.status(500).json({ message: error.message });

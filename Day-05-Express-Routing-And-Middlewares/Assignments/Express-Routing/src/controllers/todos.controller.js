@@ -86,8 +86,8 @@ const updateTodoController = async (req, res) => {
 };
 const getTodoController = async (req, res) => {
   try {
-      const { id } = req.params;
-      console.log("id",id)
+    const { id } = req.params;
+    console.log("id", id);
 
     const { todos, users } = JSON.parse(data);
 
@@ -98,12 +98,37 @@ const getTodoController = async (req, res) => {
         .status(404)
         .json({ message: `Todo not found with this id ${id}` });
     }
-    res.status(200).json({ message: "Todo retrieved successfully" }, todo);
+    res.status(200).json({ message: "Todo retrieved successfully", todo });
   } catch (error) {
-    res.status.json({ message: "Failed to fetch Todo" });
+    res.status(500).json({ message: "Failed to fetch Todo" });
   }
 };
-const deleteTodoController = async (req, res) => {};
+const deleteTodoController = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { todos, users } = JSON.parse(data);
+    const todo = todos.find((todo) => todo.id === parseInt(id));
+
+    if (!todo) {
+      return res
+        .status(401)
+        .json({ message: `Todo not found with id : ${id}` });
+    }
+
+    const newTodos = todos.filter((td) => td.id !== todo.id);
+
+    fs.writeFileSync(
+      filePath,
+      JSON.stringify({ users, todos: newTodos }, null, 2)
+    );
+
+    res
+      .status(202)
+      .json({ message: "Todo deleted successfully", deletedTodo: todo });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
 
 module.exports = {
   getAllTodosController,
