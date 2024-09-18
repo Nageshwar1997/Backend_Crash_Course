@@ -7,12 +7,12 @@ const productSchema = new mongoose.Schema(
     category: { type: String, required: true },
     sellingPrice: { type: Number, required: true },
     originalPrice: { type: Number, required: true },
-    discount: { type: Number, required: true },
+    discount: { type: String, required: true, default: "0%" },
     description: { type: String, required: true },
     color: { type: String, required: true },
     images: { type: [String], required: true },
     rating: { type: Number, required: true },
-    stock: { type: Number, required: true },
+    stock: { type: Number, required: true, default: 0 },
   },
   { timestamps: true, versionKey: false }
 );
