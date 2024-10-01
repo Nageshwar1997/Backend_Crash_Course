@@ -1,5 +1,3 @@
-
-
 // const args = process.argv.slice(2);
 // const operation = args[0];
 // const num1 = Number(args[1]);
