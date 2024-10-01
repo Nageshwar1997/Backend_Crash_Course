@@ -1,0 +1,2 @@
+utf-8 is a variable-length character encoding standard used for electronic communication.
+UTF-8 --> Unicode Transformation Format 8-bit.
