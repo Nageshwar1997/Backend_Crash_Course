@@ -1,0 +1,76 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "password": "password123"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "email": "jane.smith@example.com",
+      "password": "securepass456"
+    },
+    {
+      "id": 3,
+      "name": "Mike Johnson",
+      "email": "mike.johnson@example.com",
+      "password": "mikepass789"
+    },
+    {
+      "id": 4,
+      "name": "Emily Davis",
+      "email": "emily.davis@example.com",
+      "password": "emilysecure123"
+    },
+    {
+      "id": 5,
+      "name": "David Brown",
+      "email": "david.brown@example.com",
+      "password": "davidpassword456"
+    },
+    {
+      "id": 6,
+      "name": "Sophia Wilson",
+      "email": "sophia.wilson@example.com",
+      "password": "sophiapass789"
+    },
+    {
+      "id": 7,
+      "name": "Chris Taylor",
+      "email": "chris.taylor@example.com",
+      "password": "taylormypass123"
+    },
+    {
+      "id": 8,
+      "name": "Megan Lee",
+      "email": "megan.lee@example.com",
+      "password": "meganlee456"
+    },
+    {
+      "id": 9,
+      "name": "Daniel Clark",
+      "email": "daniel.clark@example.com",
+      "password": "danielpassword789"
+    },
+    {
+      "id": 10,
+      "name": "Sarah Lewis",
+      "email": "sarah.lewis@example.com",
+      "password": "lewissarah123"
+    },
+    {
+      "id": 11,
+      "name": "Nageshwar Pawar",
+      "email": "nageshwar@gmail.com",
+      "password": "Nageshwar@123"
+    },
+    {
+      "id": 12,
+      "name": "Sanket Pawar",
+      "email": "sanket@gmail.com",
+      "password": "Sanket@123"
+    }
+  ]
+}
