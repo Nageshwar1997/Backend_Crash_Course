@@ -55,20 +55,15 @@ function showAllUsers(res) {
   });
 }
 
-function serveStaticFile(res, filePath, contentType) {
-  fs.readFile(filePath, (err, data) => {
-    if (err) {
-      res.writeHead(404);
-      res.end("404 Not Found");
-    } else {
-      res.writeHead(200, { "Content-Type": contentType });
-      res.end(data);
-    }
-  });
-}
-
 const server = http.createServer((req, res) => {
-  if (req.method === "POST" && req.url === "/signup") {
+  if (req.url === "/" && req.method == "GET") {
+    res.writeHead(200, { "Content-Type": "text/html" });
+    res.end(
+      "<button style='background-color:blue; color:white; padding:10px'><a style='color:white; text-decoration:none' href='/signup'>Signup</a></button>"
+    );
+  } else if (req.url == "/signup" && req.method == "GET") {
+    renderSignupForm(res);
+  } else if (req.method === "POST" && req.url === "/signup") {
     let body = "";
     req.on("data", (chunk) => {
       body += chunk.toString();
