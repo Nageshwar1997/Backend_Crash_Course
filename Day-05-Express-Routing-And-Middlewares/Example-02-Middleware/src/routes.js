@@ -6,7 +6,9 @@ router.get("/", (req, res) => {
   console.log(`Request received at: ${req.requestTime}`);
   console.log("Request Method:", req.method);
   console.log("Request URL:", req.url);
-  res.status(200).send("Welcome to the Users Page & you are visited at: " + req.requestTime);
+  res
+    .status(200)
+    .send("Welcome to the Users Page & you are visited at: " + req.requestTime);
 });
 
 router.get("/profile", (req, res) => {
