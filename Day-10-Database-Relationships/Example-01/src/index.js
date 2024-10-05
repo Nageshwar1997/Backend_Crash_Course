@@ -7,6 +7,7 @@ const cors = require("cors");
 const connectDB = require("./configs/db.config");
 const userRouter = require("./routes/user.routes");
 const productRouter = require("./routes/product.routes");
+const profileRouter = require("./routes/profile.routes");
 
 app.use(express.json());
 
@@ -24,6 +25,7 @@ app.get("/", (req, res) => {
 
 // User and Product Routes
 app.use("/users", userRouter);
+app.use("/profiles", profileRouter);
 app.use("/products", productRouter);
 
 // Wrong Routes
